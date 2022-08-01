@@ -4,7 +4,7 @@ class Mounting extends Component{
     constructor(props){
         super(props);
         this.state={
-            favouriteColor : "pink"
+            favouriteColor : "orange"
         }
     }
     // static getDerivedStateFromProps(props,state){
