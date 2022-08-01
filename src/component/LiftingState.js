@@ -1,47 +1,53 @@
 import React, { Component } from "react";
-
-const scaleNames={
-    c : 'Celsius',
-    f : 'Farehrenheit'
-};
-
-class TemperatureInput extends Component{
+class Parent extends Component{
     constructor(props){
-        super(props)
-        this.handleChange = this.handleChange.bind(this);
-        this.state={
-            temperature:''
-        }
+        super(props);
+        this.state = {
+            a : 10,
+            b : 20
+        };
+        this.displayValues = this.displayValues.bind(this)
     }
-
-    handleChange(e){
+    displayValues(){
         this.setState({
-            temperature:e.target.value
+            a : 5,
+            b : 10
         })
     }
-
     render(){
-        const temperature = this.state.temperature;
-        const scale = this.props.scale;
         return(
             <div>
-                <fieldset>
-                    <legend>Enter Temperatue in {scaleNames[scale]}:</legend>
-                    <input value={temperature} onChange={this.handleChange} />
-                </fieldset>
+                <h1> Sum of the two numbers {this.state.a+this.state.b}</h1>
+                <Child a={this.state.a} b={this.state.b} handleChange={this.displayValues}/>
+                <Child2 a={this.state.a} b={this.state.b} />
             </div>
         )
     }
 }
 
 class Child extends Component{
+    constructor(props){
+        super(props);
+    }
     render(){
         return(
             <div>
-                <TemperatureInput scale='c' />
-                <TemperatureInput scale='f' />
+                <h1>Product of two numbers {this.props.a * this.props.b}</h1>
+                <button onClick={() => this.props.handleChange()}>Click</button>
+
             </div>
         )
     }
 }
-export default Child
+
+class Child2 extends Component{
+    render(){
+        return(
+            <div>
+                <h1>The result of division is {this.props.a / this.props.b}</h1>
+            </div>
+        )
+    }
+}
+
+export default Parent
