@@ -4,7 +4,7 @@ class Updating1 extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            favouriteColour : "red"
+            favouriteColour : "pink"
         }
     }
     componentShouldUpdate(){
