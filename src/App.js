@@ -9,6 +9,7 @@ import Updating1 from './component/Updating1';
 import Updating2 from './component/Updating2';
 import UseReducer from './component/HooksUseReducer';
 import Proptypes from './component/Proptypes';
+import ConditionalRendering from './component/ConditionalRendering';
 class App extends React.Component{
 
 render(){
@@ -20,7 +21,7 @@ render(){
     }
     return(
         <div>
-            {/* <Hooks />
+            <Hooks />
             <Parent />
             <HooksUseEffect />
             <br />
@@ -32,9 +33,11 @@ render(){
             <br />
             <Updating2 />
             <br />
-            <UseReducer /> */}
+            <UseReducer />
             <Proptypes name="Kavya" age={24} address={address}
             />
+            <br />
+            <ConditionalRendering />
         </div>
     )
 }
