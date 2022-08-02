@@ -1,16 +1,23 @@
+import { Button } from "@mui/material";
 import React, { Component } from "react";
 
 class Click extends React.Component{
 
     clickHandler(){
-        console.log("Button Clicked")
+       alert("Button Clicked")
     }
     
     
     render(){
         return(
             <div>
-                <button onClick={this.clickHandler}>Click Me</button>
+                <Button variant="text" onClick={this.clickHandler}>Click Me</Button>
+                <Button variant="contained" onClick={this.clickHandler}>Click Me</Button>
+                <Button variant="outlined" onClick={this.clickHandler}>Click Me</Button>
+                <br />
+                <Button variant="contained" disabled>Disabled</Button>
+                <br />
+                <Button variant="contained" disableElevation>Elevation</Button>
             </div>
         )
     }
