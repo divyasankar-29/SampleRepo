@@ -18,7 +18,6 @@ class Component2 extends React.Component{
     render(){
         return(
             <div>
-                Name is {this.state.userName}
                 <br />
                 <Component3  name = {this.state.userName} handleOnChange={this.handleChange} /> 
                 <br />

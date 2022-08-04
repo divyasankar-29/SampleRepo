@@ -4,6 +4,7 @@ import './App.css';
 import Proptypes from './component/Proptypes';
 import Component2 from './component/Component2';
 import Click from './component/ClassClick';
+import ReactRouter from './component/ReactRouter';
 class App extends React.Component{
 
 render(){
@@ -22,6 +23,7 @@ render(){
             <Component2 />
             <br />
             <Click />
+            <ReactRouter />
         </div>
     )
 }

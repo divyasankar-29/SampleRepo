@@ -11,6 +11,8 @@ class Component3 extends React.Component{
     render(){
         return(
             <div>
+                 Name is {this.props.name}
+                 <br />
                 <input type="text" 
                 value = {this.props.name}
                 onChange={(e)  => this.props.handleOnChange(e.target.value)} 
