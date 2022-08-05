@@ -1,18 +1,26 @@
 import React from "react";
-import { BrowserRouter,Route, Routes} from "react-router-dom";
-import Home from "./Home";
-import About from "./About";
+import {Link} from "react-router-dom";
+import "./styles.css";
+
 class ReactRouter extends React.Component{
     render(){
         return(
-            <>
-            <BrowserRouter>
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="about" element={<About />} />
-            </Routes>
-            </BrowserRouter>
-            </>
+            <div>
+            <ul className="nav">
+                <li>
+                    <Link to="/">Home</Link>
+                </li>
+                <li>
+                    <Link to="/about">About</Link>
+                </li>
+                <li>
+                    <Link to="/contact">Contact</Link>
+                </li>
+                <li>
+                    <Link to="/post">Post</Link>
+                </li>
+            </ul>
+            </div>
         )
     }
 }

@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 
-class Home extends React.Component{
-    render(){
+function Home(){
+
+    useEffect(
+        () => {
+            window.scroll(0,0)
+        } , []
+    )
         return(
             <div> Home page</div>
         )
     }
-}
 export default Home

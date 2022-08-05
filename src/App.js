@@ -1,30 +1,43 @@
 import React from 'react';
 import './App.css';
-
-import Proptypes from './component/Proptypes';
-import Component2 from './component/Component2';
-import Click from './component/ClassClick';
 import ReactRouter from './component/ReactRouter';
+import Home from "./component/Home";
+import About from "./component/About";
+import Contact from "./component/Contact";
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Post from './component/Post';
+import Hook from './component/Hook';
+
+
+  
 class App extends React.Component{
 
 render(){
-    const address={
-        doorNo : 34,
-        street : "Netaji street",
-        city : "Banglore",
-        pincode : 654321
-    }
+    console.log("app call");
+    // const address={
+    //     doorNo : 34,
+    //     street : "Netaji street",
+    //     city : "Banglore",
+    //     pincode : 654321
+    // }
     return(
+        <div className='div1'>
+        <BrowserRouter>
         <div>
-            
-            <Proptypes name="Kavya" age={24} address={address}
-            />
-            <br />
-            <Component2 />
-            <br />
-            <Click />
-            <ReactRouter />
+        <ReactRouter />
         </div>
+        <Routes>
+        <Route path="/" element={<Home/>} exact/>
+        <Route path="/about" element={<About/>} />
+        <Route path="/contact" element={<Contact/>} />
+        <Route path="/post" element={<Post/>} />
+        </Routes> 
+
+               
+        </BrowserRouter>
+        <Hook />
+        </div>
+       
     )
 }
 }
